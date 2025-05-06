@@ -44,6 +44,26 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.w500,
                 ),
                 descriptionTextAlign: TextAlign.center,
+                showArrow: true,
+                tooltipActions: [
+                  TooltipActionButton(
+                    type: TooltipDefaultActionType.previous,
+                    backgroundColor: Colors.red,
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    leadIcon: ActionButtonIcon(icon: )
+                  ),
+                  TooltipActionButton(
+                    type: TooltipDefaultActionType.next,
+                    backgroundColor: Colors.blue,
+                    textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
                 child: CupertinoButton(
                   onPressed: () {},
                   color: Colors.yellow,
@@ -51,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                     child: Text("Order Now"),
                   ),
                 ),
-
               ),
             ],
           ),

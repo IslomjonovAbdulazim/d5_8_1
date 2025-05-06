@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:showcaseview/showcaseview.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,10 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  GlobalKey key1 = GlobalKey();
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((value) {
+      ShowCaseWidget.of(context).startShowCase([key1]);
+    });
   }
 
   @override
@@ -21,7 +27,33 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-            children: [],
+            children: [
+              Spacer(),
+              Showcase(
+                key: key1,
+                title: "Order Now button",
+                titleTextStyle: TextStyle(
+                  color: Colors.deepPurple,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w700,
+                ),
+                description: 'Press this button to order',
+                descTextStyle: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
+                descriptionTextAlign: TextAlign.center,
+                child: CupertinoButton(
+                  onPressed: () {},
+                  color: Colors.yellow,
+                  child: Center(
+                    child: Text("Order Now"),
+                  ),
+                ),
+
+              ),
+            ],
           ),
         ),
       ),

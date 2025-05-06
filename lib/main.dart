@@ -6,7 +6,7 @@ import 'package:showcaseview/showcaseview.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => ShowCaseWidget(
         builder: (context) => MyApp(),
       ),
